@@ -32,6 +32,8 @@ app.get('/', function(req, res) {
 Hello, {{ username | default('bob') }}!
 ```
 
+If we visit `http://127.0.0.1:3000/?name=<s>matt</s>` the name is encoded as expected. 
+
 Express uses "qs" to parse query paramaters. That means express supports parsing arrays using a [] notation:
 `http://127.0.0.1:3000/?name[]=<s>matt</s>`
 
@@ -54,4 +56,4 @@ function suppressValue(val, autoescape) {
 }
 ```
 
-Because we forces the name param to be an array nunjucks skips ptoperly encoding this value.  
+Because we forces the name param to be an array nunjucks skips ptoperly encoding this value. Because of this visiting:  `http://127.0.0.1:3000/?name[]=<s>matt</s>` will reflect the name param without any encoding.
