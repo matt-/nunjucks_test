@@ -56,4 +56,4 @@ function suppressValue(val, autoescape) {
 }
 ```
 
-Because we forces the name param to be an array nunjucks skips ptoperly encoding this value. Because of this visiting:  `http://127.0.0.1:3000/?name[]=<s>matt</s>` will reflect the name param without any encoding.
+Because we forces the name param to be an array nunjucks skips properly encoding this value. Because of this visiting:  `http://127.0.0.1:3000/?name[]=<s>matt</s>` will reflect the name param without any encoding.
